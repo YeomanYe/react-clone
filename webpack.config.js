@@ -4,7 +4,7 @@ const baseConfig = require('./webpack.config.base.js');
 
 const devServer = {
     hot: true,
-    port: 12306,
+    port: 12580,
     host: '0.0.0.0',
 };
 
