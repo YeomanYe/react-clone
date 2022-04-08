@@ -1,0 +1,210 @@
+{
+    /* 本配置出自typescript 4.4版本，地址：https://www.typescriptlang.org/zh/tsconfig */
+    "compilerOptions": {
+        /* ==== Type Checking 类型检查 ==== */
+        // 是否允许隐式any类型
+        "noImplicitAny": false,
+        // 是否让生成的js都为严格模式
+        "alwaysStrict": true,
+        // 只有使用可选参数?设置时，才能进行null、undefined赋值
+        "strictNullChecks": true,
+        // 针对bind、call、apply，用于严格检查传入函数的参数
+        "strictBindCallApply": true,
+        // 对于非可选的成员变量没有初始化则报错
+        "strictPropertyInitialization": false,
+        // this 被推断成 any 类型则报错
+        "noImplicitThis": true,
+        // 检测所有代码路径，确保返回值匹配，ps：不返回不能使用undefined，需要用void
+        "noImplicitReturns": true,
+        // 类继承覆盖父类的方法与变量必须使用关键字override
+        "noImplicitOverride": true,
+        // 被使用?设置为可选的属性，不能直接使用undefined赋值
+        // "exactOptionalPropertyTypes": false,
+        // switch语句的分支必须包含所有值
+        "noFallthroughCasesInSwitch": false,
+        // 非显式声明的属性，不能直接用`.`语法获取，必须通过`[key]`来获取
+        "noPropertyAccessFromIndexSignature": false,
+        // 参数实行逆变，返回值实行协变
+        "strictFunctionTypes": false,
+        // 将catch捕获的err类型设置为unknown
+        // "useUnknownInCatchVariables": false,
+        // 非显式声明的属性，在取值时增加undefined类型
+        "noUncheckedIndexedAccess": false,
+        // 不能存在没有使用的变量
+        "noUnusedLocals": false,
+        // 不能有未使用的参数
+        "noUnusedParameters": false,
+        // 是否允许不可达代码，默认只是警告，开启之后将会忽略或者报错
+        // "allowUnreachableCode": false,
+        // 是否未使用变量，默认只是警告，开启之后将会忽略或者报错
+        // "allowUnusedLabels": false,
+        // 严格模式
+        // "strict": false,
+
+        /* ==== Modules 模块相关 ==== */
+        // 允许在模块文件中以全局变量的形式访问 UMD 的导出
+        "allowUmdGlobalAccess": true,
+        // 模块解析方式，模仿node的模块解析方式
+        "moduleResolution": "node",
+        // ts不检查和导入<reference 指令中的内容到程序中
+        "noResolve": false,
+        // 一些将模块导入重新映射到相对于 baseUrl 路径的配置
+        // "paths": {},
+        // 是否允许到如json模块
+        "resolveJsonModule": true,
+        // 设置解析非绝对路径模块名时的基准目录，配置别名用
+        // "baseUrl": "",
+        // 所有输入的非声明文件中的最长公共路径，用于设置特殊的输出路径结构。
+        // "rootDir": "",
+        // 告诉编译器有许多“虚拟”的目录作为一个根目录。在“虚拟”目录中解析相对应的模块导入，就像它们被合并到同一目录中一样
+        // "rootDirs": [],
+        // 默认所有 可见 的 ”@types” 包都将包含在你的编译过程中。仅有 在 typeRoots 下的包会被包含
+        // "typeRoots": [],
+        // 默认所有 可见 的 ”@types” 包都将包含在你的编译过程中。当 types 被指定，则只有列出的包才会被包含在全局范围内
+         "types": ["reflect-metadata"],
+
+        // ==== Emit 生成相关 ====
+        // 是否给导出生成声明文件
+        "declaration": true,
+        // 给定义文件生成sourcemap，帮助编辑器进行代码跳转
+        "declarationMap": true,
+        // 定义文件存放路径
+        // "declarationDir": "./types",
+        // 迭代器降级
+        "downlevelIteration": true,
+        // 许多不同的模块使用相同的辅助函数代码，辅助函数将从 tslib 中被导入
+        "importHelpers": true,
+        // 当写出JS文件时，是否先发出个BOM标记，部分环境会需要这个标记，大多有这个标记都会出问题
+        "emitBOM": false,
+        // 是否只生成声明文件
+        "emitDeclarationOnly": false,
+        // 是否在生成的js文件中，内联SourceMap
+        "inlineSourceMap": false,
+        // 是否在生成的js文件中，内联源码
+        "inlineSources": false,
+        // 未作为值使用的导入则报错
+        "importsNotUsedAsValues": "error",
+        // 禁止生成任何东西，当将ts交由babel等工具处理时使用
+        "noEmit": false,
+        // 不将转换需要的帮助函数添加到文件中，而是默认全局存在这样的函数
+        "noEmitHelpers": false,
+        // 不生成文件，当ts检查出现任何错误的时候。为了方便调试不开启
+        "noEmitOnError": true,
+        // 保留枚举常量对象
+        "preserveConstEnums": false,
+        // 移除注释
+        "removeComments": false,
+        // 是否允许生成sourcemap
+        "sourceMap": true,
+        // 不为有@internal字样的导出生成声明
+        "stripInternal": true,
+        // 将输出文件合并为一个文件。合并的顺序是根据传入编译器的文件顺序和 ///<reference``>和 import的文件顺序决定的。
+        // "outFile": false,
+        // 指定生成的js的新行的换行符，默认是跟系统一致，所以不设置
+        // "newLine": "crlf",
+        // 调试需要的sourcemap文件所在位置
+        // "mapRoot": "https://my-website.com/debug/sourcemaps/",
+        // 调试需要的源码所在的网站地址
+        // "sourceRoot": "https://my-website.com/debug/source/",
+
+        /* ==== JavaScript Support js支持 ==== */
+        // 是否允许导入ts，默认只允许导入.ts/.tsx/
+        // "allowJs": true,
+        // JavaScript 文件中会报告错误
+        // "checkJs": true,
+        // 最大node模块搜索层级，默认为0保持即可。
+        // "maxNodeModuleJsDepth": 0,
+
+        /* ==== Projects 工程相关 */
+        // 表明该文件夹为一个子项目，工程相关
+        // "composite": true,
+        // 多工程的ts项目，是否禁止把所有工程都加载进内存待编译
+        "disableReferencedProjectLoad": true,
+        // 是否不该子项目的内容不想被检索到
+        "disableSolutionSearching": true,
+        // 是否采用基于tsBuildInfoFile的增量编译
+        "incremental": true,
+        // 指定一个文件用于放置增量编译信息
+        // "tsBuildInfoFile":".tsbuildinfo",
+
+        /* ==== Editor Support 编辑器支持 ==== */
+        // ts默认分配了一个内存上限，这在大型项目中会有性能问题
+        "disableSizeLimit": true,
+        // 插件配置，根据具体插件进行配置
+        "plugins": [],
+
+        /* ==== Interop Constraints 互操作性约束 ==== */
+        // 是否允许合成默认导入，如果没有默认导出则合将所有导出合成为一个变成默认导出
+        "allowSyntheticDefaultImports": true,
+        // 允许es模块互操作性，即其他模块转换为es规范出现的问题ts会自动进行抹平，如：es默认只允许导出对象不能导出方法等
+        "esModuleInterop": true,
+        // TypeScript 将会在当你写的某些代码不能被单文件转译的过程正确处理时警告你。
+        "isolatedModules": false,
+        // 对于模块和包的引用，指令都相对于符号链接所在的位置进行解析，而不是相对于符号链接解析后的路径。
+        "preserveSymlinks": false,
+        // 强制路径查找与文件系统对大小写名字敏感保持一致
+        "forceConsistentCasingInFileNames": false,
+
+        /* ==== Language and Enviroment 语言和环境 ==== */
+        // 给被装饰器声明的元素，加上使用reflect-metadata规定的元数据增加方案
+        "emitDecoratorMetadata": true,
+        // 启用实验性的ES装饰器。
+        "experimentalDecorators": true,
+        // 不包含默认的库文件（ lib.d.ts）
+        "noLib": false,
+        // jsx模式，低于17使用react，高于使用react-jsx
+        "jsx": "react-jsx",
+        // 使用Object.defineProperty来定义类字段，因为提案的发展方向是这样
+        "useDefineForClassFields": true,
+        // 编译过程中需要引入的库文件的列表。
+        "lib": ["es2017", "DOM", "webworker"],
+        // 指定JSX Fragment的Factory函数
+        // "jsxFragmentFactory": "React.Fragment",
+        // 指定导入JSX工厂函数的方法
+        // "jsxImportSource": "preact",
+        // 指定生成目标为react JSX时，使用的JSX工厂函数，比如 React.createElement或 preact.h。
+        // "jsxFactory": "React.createElement",
+
+        /* ==== Backwards Compatibility 向后兼容性 ==== */
+        // 输入文件的字符集
+        "charset": "utf8",
+        // 输出非ES6模块，不包含 "use strict"指令。
+        "noImplicitUseStrict": false,
+        // 禁用在函数类型里对泛型签名进行严格检查。
+        "noStrictGenericChecks": false,
+        // 阻止 --noImplicitAny对缺少索引签名的索引对象报错。
+        "suppressImplicitAnyIndexErrors": true,
+        // 阻止对对象字面量的额外属性检查。
+        "suppressExcessPropertyErrors": false,
+
+        /* ==== Completeness 完整性相关 */
+        // 忽略 库的默认声明文件的类型检查
+        "skipDefaultLibCheck": true,
+        // 忽略所有的声明文件（ *.d.ts）的类型检查。
+        "skipLibCheck": true,
+
+        /* ==== Compiler Diagnostics 编译摘要(TODO) ==== */
+
+        /* ==== Output Formatting 输出内容格式化(TODO) ==== */
+
+        /* ==== 其他，专有配置，以下部分根据项目变动 ==== */
+        // 输出目录
+        "outDir": "dist",
+        // 生成的es版本，"ES3"（默认）， "ES5"， "ES6"/ "ES2015"， "ES2016"， "ES2017"或 "ESNext"。
+        "target": "es2017",
+        // 项目使用的模块系统，此处设置为使用最新模块系统
+        "module": "commonjs",
+        "paths": {
+            "@lib": ["./lib"],
+            "@lib/*": ["./lib/*"]
+        },
+    },
+    /* ==== 包含与不包含的ts配置，以下部分根据项目变动 ==== */
+    "include": ["src/**/*", "image.d.ts"],
+    "exclude": ["src/**/*.test.ts"]
+    /* ==== 多工程组成的ts项目使用到的 ==== */
+    // "extends": "../tsconfig", //继承的tsconfig
+    // "references": [
+    //     { "path": "../src" } // 表示引用的工具库项目
+    // ]
+}
