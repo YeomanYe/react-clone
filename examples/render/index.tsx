@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 // ReactDOM.render(<div>Hello World</div>, document.getElementById('app'));
@@ -7,8 +7,19 @@ import createElement, {Comp} from '@lib/react-clone';
 import render from '@lib/react-dom-clone';
 
 class World extends Comp {
+    constructor(props) {
+        super(props);
+        this.state = {
+            text: 'World'
+        }
+    }
     render() {
-        return <span>World</span>;
+        setTimeout(() => {
+            this.setState({
+                text: 'World2'
+            });
+        }, 10000);
+        return <span>{this.state.text}</span>;
     }
 }
 const Hello = () => <span>Hello</span>

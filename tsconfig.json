@@ -199,9 +199,6 @@
             "@lib/*": ["./lib/*"]
         },
     },
-    /* ==== 包含与不包含的ts配置，以下部分根据项目变动 ==== */
-    "include": ["src/**/*", "image.d.ts"],
-    "exclude": ["src/**/*.test.ts"]
     /* ==== 多工程组成的ts项目使用到的 ==== */
     // "extends": "../tsconfig", //继承的tsconfig
     // "references": [
