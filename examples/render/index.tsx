@@ -18,7 +18,7 @@ class World extends Comp {
             this.setState({
                 text: 'World2'
             });
-        }, 10000);
+        }, 500);
         return <span>{this.state.text}</span>;
     }
 }
