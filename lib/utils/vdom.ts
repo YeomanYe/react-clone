@@ -1,5 +1,6 @@
 export default class VDom {
     type; //节点类型，dom、节点、文本节点或者xxx节点
+    key: string;
     attrs;
     children;
     parent; // 父虚拟dom节点
